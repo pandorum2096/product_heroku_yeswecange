@@ -3,7 +3,7 @@ const router = express.Router();
 const products = require('../services/products');
 
 /* GET quotes listing. */
-router.get('/', async function(req, res, next) {
+router.get('/products', async function(req, res, next) {
   try {
     res.json(await products.getMultiple(req.query.page));
   } catch (err) {
@@ -13,7 +13,7 @@ router.get('/', async function(req, res, next) {
 });
 
 /* POST quotes */
-router.post('/', async function(req, res, next) {
+router.post('/products', async function(req, res, next) {
   try {
     res.json(await products.create(req.body));
   } catch (err) {
