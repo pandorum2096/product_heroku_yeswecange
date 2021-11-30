@@ -6,6 +6,4 @@ CREATE TABLE product(
     inStock BOOLEAN  NOT NULL
 );
 
-INSERT INTO product (id, name, description, price, inStock) VALUES 
-(1, 'coca', 'boisson', 200, 1), 
-(2, 'pepsi', 'boisson', 250, 0);
+INSERT INTO product (id, name, description, price, inStock) VALUES (2, 'pepsi', 'boisson', 250, true);

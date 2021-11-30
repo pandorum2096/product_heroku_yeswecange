@@ -12,3 +12,5 @@ const config = {
 };
 
 module.exports = config;
+
+//psql -h "otto.db.elephantsql.com" -p 5432 -d cklijfef -U cklijfef -W
