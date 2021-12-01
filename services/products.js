@@ -2,13 +2,11 @@ const db = require('./db');
 const helper = require('../helper');
 const config = require('../config');
 
-async function getMultiple(page = 1) {
-  //const offset = helper.getOffset(page, config.listPerPage);
+async function getMultiple() {
   const rows = await db.query(
     'SELECT * FROM product'
   );
   const data = helper.emptyOrRows(rows);
-  //const meta = {page};
 
   return {data}
 }
