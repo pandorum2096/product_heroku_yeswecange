@@ -5,7 +5,7 @@ const products = require('../services/products');
 /* GET products */
 router.get('/products', async function(req, res, next) {
   try {
-    res.json(await products.getMultiple(req.query.page));
+    res.json(await products.getMultiple());
   } catch (err) {
     console.error(`Error while getting quotes `, err.message);
     res.status(err.statusCode || 500).json({'message': err.message});
