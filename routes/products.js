@@ -37,7 +37,7 @@ router.post('/products', async function(req, res, next) {
 router.put('/products/:id', async function(req, res, next) {
   const {id} = req.params;
   try {
-    res.json(await products.update(id, req.body));
+    res.json(await products.update(req.body, id));
   } catch (err) {
     console.error(`Error while posting product `, err.message);
     res.status(err.statusCode || 500).json({'message': err.message});
