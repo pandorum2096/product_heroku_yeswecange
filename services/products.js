@@ -54,7 +54,7 @@ async function create(product){
  // validateCreate(quote);
 
   const result = await db.query(
-    'INSERT INTO products(name, description, price, inStock) VALUES ($1, $2, $3, $4) RETURNING *',
+    'INSERT INTO product(name, description, price, inStock) VALUES ($1, $2, $3, $4) RETURNING *',
     [product.name, product.description, product.price, product.inStock]
   );
   let message = 'Error in creating product';
