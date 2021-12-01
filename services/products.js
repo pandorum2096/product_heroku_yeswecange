@@ -11,11 +11,11 @@ async function getMultiple() {
 
 //GET ALL products
 async function getOne(product) {
-  const result = await db.query(
+  const rows = await db.query(
     'SELECT * FROM Product WHERE id=$1',
     [product.id]
   );
-  const data = helper.emptyOrRows(result[0]);
+  const data = helper.emptyOrRows(rows);
   return {data}
 }
 

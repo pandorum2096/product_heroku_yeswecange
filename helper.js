@@ -9,8 +9,16 @@ function emptyOrRows(rows) {
   return { products: rows};
 }
 
+function oneOrRows(rows) {
+  if (!rows) {
+    return [];
+  }
+  return { products: rows[0]};
+}
+
 
 module.exports = {
   getOffset,
-  emptyOrRows
+  emptyOrRows,
+  oneOrRows
 }
