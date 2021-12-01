@@ -18,5 +18,6 @@ function emptyOrOneRows(rows) {
 
 module.exports = {
   getOffset,
-  emptyOrRows
+  emptyOrRows,
+  emptyOrOneRows
 }
