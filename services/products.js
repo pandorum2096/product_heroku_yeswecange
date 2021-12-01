@@ -5,16 +5,12 @@ const config = require('../config');
 async function getMultiple(page = 1) {
   const offset = helper.getOffset(page, config.listPerPage);
   const rows = await db.query(
-    'SELECT * FROM product OFFSET $1 LIMIT $2', 
-    [offset, config.listPerPage]
+    'SELECT * FROM product'
   );
   const data = helper.emptyOrRows(rows);
   const meta = {page};
 
-  return {
-    data,
-  //  meta
-  }
+  return {data}
 }
 
 
