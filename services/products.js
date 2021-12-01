@@ -11,6 +11,7 @@ async function getMultiple() {
 
 //GET a product
 async function getOneProduct(id) {
+  const {id} = req.params;
   const rows = await db.query('SELECT * FROM Product WHERE id=$1', [id]);
   const data = helper.emptyOrOneRows(rows);
   return {data}
