@@ -13,7 +13,7 @@ router.get('/products', async function(req, res, next) {
 });
 
 /* GET a product */
-router.post('/products/:id', async function(req, res, next) {
+router.get('/products/:id', async function(req, res, next) {
   const {id} = req.params;
   try {
     res.json(await products.getOne(id));
