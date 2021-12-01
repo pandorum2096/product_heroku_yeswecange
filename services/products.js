@@ -11,7 +11,7 @@ async function getMultiple() {
 
 //GET a product
 async function getOne(id) {
-  const rows = await config.query("SELECT * FROM product WHERE id=$1", [id]);
+  const rows = await db.query("SELECT * FROM product WHERE id=$1", [id]);
   const data = { products: rows[0]};
   //return data
   // const product = await pool.query("SELECT * FROM Product WHERE id=$1", [id]);
