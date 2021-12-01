@@ -6,7 +6,7 @@ function emptyOrRows(rows) {
   if (!rows) {
     return [];
   }
-  return { products: rows[0]};
+  return { products: rows};
 }
 
 
