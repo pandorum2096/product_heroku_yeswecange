@@ -9,13 +9,13 @@ async function getMultiple() {
   return {data}
 }
 
-//GET ALL products
+//GET a product
 async function getOne(product) {
   const rows = await db.query(
     'SELECT * FROM Product WHERE id=$1',
-    [product.id]
+    [product]
   );
-  const data = helper.emptyOrRows(rows);
+  const data = helper.oneOrRows(rows);
   return {data}
 }
 

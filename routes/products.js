@@ -14,8 +14,9 @@ router.get('/products', async function(req, res, next) {
 
 /* GET a product */
 router.post('/products/:id', async function(req, res, next) {
+  const {id} = req.params;
   try {
-    res.json(await products.getOne(req.body));
+    res.json(await products.getOne(id));
   } catch (err) {
     console.error(`Error while posting product `, err.message);
     res.status(err.statusCode || 500).json({'message': err.message});
