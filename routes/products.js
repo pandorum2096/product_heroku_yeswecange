@@ -34,7 +34,7 @@ router.post('/products', async function(req, res, next) {
 });
 
 /* DELETE a product */
-router.delte('/products/:id', async function(req, res, next) {
+router.delete('/products/:id', async function(req, res, next) {
   const {id} = req.params;
   try {
     res.json(await products.deleteOne(id));
