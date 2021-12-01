@@ -15,7 +15,7 @@ async function getOne(product) {
     'SELECT * FROM Product WHERE id=$1',
     [product.id]
   );
-  const data = helper.oneOrRows(rows[0]);
+  const data = helper.oneOrRows(rows);
   return {data}
 }
 
