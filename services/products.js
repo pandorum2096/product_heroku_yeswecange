@@ -9,6 +9,13 @@ async function getMultiple() {
   return {data}
 }
 
+//GET a product
+async function getOneProduct(id) {
+  const rows = await db.query('SELECT * FROM Product WHERE id=$1', [id]);
+  const data = helper.emptyOrOneRows(rows);
+  return {data}
+}
+
 //POST a product
 async function create(product){
 
@@ -26,5 +33,6 @@ async function create(product){
 
 module.exports = {
   getMultiple,
+  getOneProduct,
   create
 }

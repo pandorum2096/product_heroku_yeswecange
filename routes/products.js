@@ -13,14 +13,15 @@ router.get('/products', async function(req, res, next) {
 });
 
 /* GET a product */
-// router.get('/products/:id', async function(req, res, next) {
-//   try {
-//     res.json(await products.getMultiple(req.query.page));
-//   } catch (err) {
-//     console.error(`Error while getting product `, err.message);
-//     res.status(err.statusCode || 500).json({'message': err.message});
-//   }
-// });
+router.get('/products/:id', async function(req, res, next) {
+   const {id} = req.params;
+  try {
+    res.json(await products.getOneProduct(id));
+  } catch (err) {
+    console.error(`Error while getting product `, err.message);
+    res.status(err.statusCode || 500).json({'message': err.message});
+  }
+});
 
 /* POST a product */
 router.post('/products', async function(req, res, next) {
