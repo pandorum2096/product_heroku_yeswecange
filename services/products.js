@@ -37,6 +37,11 @@ async function create(product){
   return {message};
 }
 
+//PUT a product
+async function putOne(id, product){
+  const rows = await db.query("UPDATE Product SET name=$1,description=$2,price=$3,inStock=$4 WHERE id=$5", [product.name, product.description, product.price, product.inStock, id]);
+  return { message: 'Modified!' };
+}
 
 //DELETE a product
 async function deleteOne(id) {
@@ -49,5 +54,6 @@ module.exports = {
   getMultiple,
   getOne,
   create,
+  putOne,
   deleteOne
 }
