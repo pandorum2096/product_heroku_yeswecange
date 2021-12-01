@@ -13,9 +13,9 @@ async function getMultiple() {
 async function getOne(product) {
   const rows = await db.query(
     'SELECT * FROM Product WHERE id=$1',
-    [product]
+    [product.id]
   );
-  const data = helper.oneOrRows(rows);
+  const data = helper.oneOrRows(rows[0]);
   return {data}
 }
 
