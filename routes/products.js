@@ -33,11 +33,11 @@ router.post('/products', async function(req, res, next) {
   }
 });
 
-/* PUT a product */
-router.put('/products', async function(req, res, next) {
-  //const {id} = req.params;
+/* DELETE a product */
+router.delte('/products/:id', async function(req, res, next) {
+  const {id} = req.params;
   try {
-    res.json(await products.update(req.body));
+    res.json(await products.deleteOne(id));
   } catch (err) {
     console.error(`Error while posting product `, err.message);
     res.status(err.statusCode || 500).json({'message': err.message});
