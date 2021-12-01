@@ -6,7 +6,7 @@ function emptyOrRows(rows) {
   if (!rows) {
     return [];
   }
-  return rows;
+  return { products: rows};
 }
 
 module.exports = {
