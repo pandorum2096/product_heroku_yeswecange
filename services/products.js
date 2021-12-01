@@ -40,7 +40,7 @@ async function create(product){
 //PUT a product
 async function update(product, id){
 
-  const result = await db.query("UPDATE Product SET name=$1,description=$2,price=$3,inStock=$4 WHERE id=$5", [product.name, product.description, product.price, product.inStock, id]);
+  const result = await db.query("UPDATE Product SET name=$1,description=$2,price=$3,inStock=$4 WHERE id=$5", [product.name, product.description, product.price, product.inStock, product.id]);
   let message = 'Error in creating product';
   if (result.length) {
     message = 'Modified!';
