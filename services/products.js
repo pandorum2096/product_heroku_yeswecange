@@ -3,7 +3,7 @@ const helper = require('../helper');
 const config = require('../config');
 
 async function getMultiple(){
-  const allProducts = await db.query('SELECT * FROM product');
+  const allProducts = await config.query('SELECT * FROM product');
   const data = { products: allProducts.rows};
   return {data};
 }
