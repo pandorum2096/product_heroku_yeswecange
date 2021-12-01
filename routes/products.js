@@ -13,12 +13,11 @@ router.get('/products', async function(req, res, next) {
 });
 
 /* GET a product */
-router.get('/products/:id', async function(req, res, next) {
-  //  const {id} = req.params;
+router.post('/products/:id', async function(req, res, next) {
   try {
-    res.json(await products.getOneProduct(req.params));
+    res.json(await products.getOne(req.body));
   } catch (err) {
-    console.error(`Error while getting product `, err.message);
+    console.error(`Error while posting product `, err.message);
     res.status(err.statusCode || 500).json({'message': err.message});
   }
 });
