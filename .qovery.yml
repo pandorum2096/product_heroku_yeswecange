@@ -1,11 +1,11 @@
 ---
 application:
-  name: "quotes-api"
-  project: "quotes-api"
+  name: "product-api"
+  project: "products-api"
   organization: "QoveryCommunity"
 routers:
-- name: "main-quotes-api"
+- name: "main-products-api"
   routes:
-  - application_name: "quotes-api"
+  - application_name: "products-api"
     paths:
     - "/*"
