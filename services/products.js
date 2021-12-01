@@ -11,6 +11,7 @@ async function getMultiple() {
 
 //POST a product
 async function create(product){
+
   const result = await db.query(
     'INSERT INTO product(name, description, price, inStock) VALUES ($1, $2, $3, $4) RETURNING *',
     [product.name, product.description, product.price, product.inStock]
@@ -20,7 +21,6 @@ async function create(product){
   if (result.length) {
     message = 'product created successfully';
   }
-
   return {message};
 }
 
