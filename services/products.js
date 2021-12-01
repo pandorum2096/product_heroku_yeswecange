@@ -13,7 +13,7 @@ async function getMultiple() {
 async function getOne(id) {
   const rows = await db.query("SELECT * FROM product WHERE id=$1", [id]);
   const data = { product: rows[0]};
-  
+
   if (!rows) {
     return [];
   }else{
@@ -37,8 +37,20 @@ async function create(product){
   return {message};
 }
 
+//PUT a product
+async function update(id, product){
+
+  const result = await db.query("UPDATE Product SET name=$1,description=$2,price=$3,inStock=$4 WHERE id=$5", [product.name, product.description, product.price, product.inStock, id]);
+  let message = 'Error in creating product';
+  if (result.length) {
+    message = 'Modified!';
+  }
+  return { message };
+}
+
 module.exports = {
   getMultiple,
   getOne,
-  create
+  create,
+  update
 }
